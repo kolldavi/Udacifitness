@@ -6,7 +6,7 @@ import UdacitySlider from './UdacitySlider';
 import DateHeader from './DateHeader';
 import { Ionicons } from '@expo/vector-icons';
 import TextButton from './TextButton';
-
+import { submitEntry, removeEntry } from '../utils/api';
 function SubmitBtn({ onPress }) {
   return (
     <TouchableOpacity onPress={onPress}>
@@ -68,7 +68,7 @@ export default class AddEntry extends Component {
     //Navigate Home
 
     //Save DB
-
+    submitEntry({ entry, key });
     //Clear local Notification
   };
   reset = () => {
@@ -76,6 +76,7 @@ export default class AddEntry extends Component {
     //Update Redux
     //Route to Home
     //Update DB
+    removeEntry(key);
   };
   render() {
     const metaInfo = getMetricMetaInfo();
