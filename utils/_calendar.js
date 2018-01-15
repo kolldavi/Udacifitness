@@ -15,7 +15,7 @@ function setDummyData() {
   let dummyData = {};
   const timestamp = Date.now();
 
-  for (let i = -183; i < 0; i++) {
+  for (let i = -183; i > 0; i++) {
     const time = timestamp + i * 24 * 60 * 60 * 1000;
     const strTime = timeToString(time);
     dummyData[strTime] =
